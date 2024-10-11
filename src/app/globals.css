@@ -2,26 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+html,
+body,
+#root{
+  height: 100%;
+  width: 100%;
+  font-family: "DM Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.button-greet {
+  width: 117px;
+  height: 95.14px;
+  gap: 0px;
+  top: 0px;
+left: 0px;
+  border-radius: 0px 64.29px 64.29px 0px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease; /* Add transition */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.button-greet-text {
+  display: none;
+  width: 358px;
+  height: 95px;
+  gap: 0px;
+  border-radius: 64.29px 0px 0px 64.29px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Add transition */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.button-greet:hover {
+  opacity: 0; /* Fade out .button-greet */
 }
+
+.button-greet:hover + .button-greet-text {
+  display: flex; /* Show .button-greet-text */
+  opacity: 1; /* Fade in .button-greet-text */
+}
+
+.button-linkc {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  width: 85px; 
+  height: 85px; 
+  padding: 0.5rem;
+  gap: 10px; 
+  border-radius: 180px 0px 0px 0px;
+  border: 1px solid #060606; 
+  background-color: transparent; 
+  opacity: 0.8; 
+  transition: opacity 0.3s ease-in-out; 
+}
+
+.button-linkc:hover {
+  opacity: 1; 
+}
+
+.button-linkc svg {
+  width: 20px; 
+  height: 20px;
+  margin-left: 5px; 
+}
+
+
